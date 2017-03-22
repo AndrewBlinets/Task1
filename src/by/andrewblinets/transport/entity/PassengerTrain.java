@@ -85,12 +85,14 @@ public class PassengerTrain extends Train {
     }
 
     @Override
-    public boolean addCarriage(Carriage carriage) {
-        return false;
+    public void addCarriage(Carriage carriage) {
+        carriages.add(carriage);
+        System.out.println("Carriage add successfully");
     }
 
     @Override
-    public boolean removeCarriageByNumber(int numbers) {
-        return false;
+    public void removeCarriageByNumber(int numbers) {
+        carriages.remove(numbers);
+        System.out.println("Carriage delete successfully");
     }
 }

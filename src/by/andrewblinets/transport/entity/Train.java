@@ -11,8 +11,8 @@ public abstract class Train implements Schedullable {
     protected String departurePoint;
     protected String arrivedPoint;
 
-    public abstract boolean addCarriage(Carriage carriage);
-    public abstract boolean removeCarriageByNumber(int numbers);
+    public abstract void addCarriage(Carriage carriage);
+    public abstract void removeCarriageByNumber(int numbers);
 
     public Train() {
     }

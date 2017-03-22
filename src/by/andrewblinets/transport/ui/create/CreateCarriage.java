@@ -23,7 +23,7 @@ public class CreateCarriage implements IteanMenu {
         return true;
     }
 
-    private void create(UserInterface userInterface) {
+    public int create(UserInterface userInterface) {
         Carriage carriage;
         if(userInterface.getCarriages().size() != 0)
             carriage = new Carriage(userInterface.getCarriages().get(userInterface.getCarriages().size() - 1).getId() + 1);
@@ -32,6 +32,7 @@ public class CreateCarriage implements IteanMenu {
         carriage.setStyle(style());
         userInterface.getCarriages().add(carriage);
         System.out.println("Carriage  " + carriage.toString() + " successfully created!");
+        return userInterface.getCarriages().size() - 1;
     }
 
     private StyleCarriage style()

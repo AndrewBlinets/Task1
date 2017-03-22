@@ -47,6 +47,7 @@ public class KeyboardWork {
             }
             catch (NumberFormatException e) {
                 System.out.println("Enter a numerical value, please!!!");
+                flagError = true;
             }
             catch (IOException e) {
                 System.out.println("Error reading from the keyboard");

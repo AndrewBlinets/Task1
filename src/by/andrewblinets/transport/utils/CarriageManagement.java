@@ -14,7 +14,7 @@ public class CarriageManagement {
         double weight = 0;
         for(Passenger obj : passengers)
         {
-           // weight += PassengerManagement.getWeightLuggagePassenger(obj.getLuggages());
+            weight += PassengerManagement.getWeightLuggagePassenger(obj.getLuggages());
         }
         return weight;
     }

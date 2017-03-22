@@ -24,7 +24,7 @@ public class TrainManagement {
         int weight = 0;
         for (Carriage obj : carriages)
         {
-            //weight+= CarriageManagement.getWeightLuggageCarriage(obj.getPassengers());
+            weight+= CarriageManagement.getWeightLuggageCarriage(obj.getPassengers());
         }
         return weight;
     }
