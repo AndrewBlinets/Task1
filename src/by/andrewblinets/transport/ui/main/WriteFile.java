@@ -17,15 +17,15 @@ public class WriteFile extends UserInterface implements IteanMenu {
     private final String WRITE = "\tMenu write\n" +
             "1-Write text file\n" +
             "2-Write xml file\n" +
-            "3-Write json fiel\n" +
-            "4-Back";
+            //"3-Write json fiel\n" +
+            "3-Back";
 
     public WriteFile() {
         super();
         this.menu = new ArrayList<>();
         this.menu.add(new WriteTextFile());
         this.menu.add(new WriteXmlFile());
-        this.menu.add(new WriteJsonFile());
+       // this.menu.add(new WriteJsonFile());
         this.menu.add(new ExitFromMenu());
     }
 

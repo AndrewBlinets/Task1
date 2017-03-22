@@ -14,6 +14,9 @@ public class Carriage {
     private List<Passenger> passengers;
     private StyleCarriage style;
 
+    public Carriage() {
+    }
+
     public Carriage(long id) {
         this.id = id;
         this.passengers = new ArrayList<>();

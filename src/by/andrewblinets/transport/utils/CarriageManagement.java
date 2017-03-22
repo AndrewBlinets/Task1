@@ -1,5 +1,6 @@
 package by.andrewblinets.transport.utils;
 
+import by.andrewblinets.transport.entity.Carriage;
 import by.andrewblinets.transport.entity.Passenger;
 
 import java.util.List;
@@ -9,12 +10,12 @@ import java.util.List;
  */
 public class CarriageManagement {
 
-    public static double getWeightLuggageCarriage(List<Passenger> passengers)
+    public static double getWeightLuggageCarriage(Carriage carriage)
     {
         double weight = 0;
-        for(Passenger obj : passengers)
+        for(Passenger obj : carriage.getPassengers())
         {
-            weight += PassengerManagement.getWeightLuggagePassenger(obj.getLuggages());
+            weight += PassengerManagement.getWeightLuggagePassenger(obj);
         }
         return weight;
     }

@@ -2,8 +2,7 @@ package by.andrewblinets.transport.ui.edit.train;
 
 import by.andrewblinets.transport.ui.IteanMenu;
 import by.andrewblinets.transport.ui.UserInterface;
-import by.andrewblinets.transport.ui.create.CreateCarriage;
-import by.andrewblinets.transport.ui.show.ShowTrain;
+import by.andrewblinets.transport.ui.show.train.SpisokTrains;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
 /**
@@ -21,7 +20,7 @@ public class RemoveFromTrainCarriage implements IteanMenu {
     public boolean MenuIteam(UserInterface userInterface) {
 
         if (userInterface.getPassengerTrains().size() != 0) {
-            new ShowTrain().show(userInterface);
+            new SpisokTrains().show(userInterface);
             do {
                 int iteam = keyboard.readInt("Enter the number of the item to remove carriage\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)

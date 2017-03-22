@@ -4,6 +4,7 @@ import by.andrewblinets.transport.ui.IteanMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.show.ShowCarriage;
 import by.andrewblinets.transport.ui.show.ShowTrain;
+import by.andrewblinets.transport.ui.show.train.SpisokTrains;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
 /**
@@ -20,7 +21,7 @@ public class RemoveTrain implements IteanMenu {
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
         if (userInterface.getPassengerTrains().size() != 0) {
-            new ShowTrain().show(userInterface);
+            new SpisokTrains().show(userInterface);
             do {
                 int iteam = keyboard.readInt("Enter the number of the item to delete\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)

@@ -24,7 +24,7 @@ public class CreatePassenger implements IteanMenu {
         return true;
     }
 
-    public void create(UserInterface userInterface) {
+    public int create(UserInterface userInterface) {
         Passenger passenger;
         if(userInterface.getPassengers().size() != 0)
             passenger = new Passenger(userInterface.getPassengers().get(userInterface.getPassengers().size() - 1).getId() + 1);
@@ -89,6 +89,7 @@ public class CreatePassenger implements IteanMenu {
         while (flagStop);
         System.out.println("Passenger " + passenger.toString() + " successfully created!");
         userInterface.getPassengers().add(passenger);
+        return userInterface.getPassengers().size() - 1;
     }
 
     private boolean searchLuggeshOtherPassangers(int number, UserInterface userInterface) {

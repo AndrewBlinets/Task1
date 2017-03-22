@@ -1,8 +1,10 @@
 package by.andrewblinets.transport.utils;
 
 import by.andrewblinets.transport.entity.Carriage;
+import by.andrewblinets.transport.entity.PassengerTrain;
 import by.andrewblinets.transport.enumes.StyleCarriage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,52 +12,120 @@ import java.util.List;
  */
 public class TrainManagement {
 
-    public static int getAmountPassangerTrain(List<Carriage> carriages)
+    /*public static int getAmountPassangerTrain(PassengerTrain train)
     {
         int kol = 0;
-        for (Carriage obj : carriages) {
+        for (Carriage obj : train.getCarriages()) {
             kol += obj.getPassengers().size();
         }
         return kol;
     }
 
-    public static double getWeightLuggageTrain(List<Carriage> carriages)
+    public static double getWeightLuggageTrain(PassengerTrain train)
     {
         int weight = 0;
-        for (Carriage obj : carriages)
+        for (Carriage obj : train.getCarriages())
         {
             weight+= CarriageManagement.getWeightLuggageCarriage(obj.getPassengers());
         }
         return weight;
+    }*/
+
+    public static void sortCarriageByIncreaseAmountPassanger(PassengerTrain train)
+    {
+        Carriage carriage = train.getCarriages().get(0);
+        int position = 0;
+        List<Carriage> list = new ArrayList<>();
+        do {
+            for (Carriage obj : train.getCarriages()) {
+                if(obj.getPassengers().size() <= carriage.getPassengers().size())
+                {
+                    carriage = train.getCarriages().get(position);
+                    position ++;
+                }
+                else
+                    position++;
+            }
+            list.add(carriage);
+            train.getCarriages().remove(carriage);
+            if(train.getCarriages().size() != 0)
+                carriage = train.getCarriages().get(0);
+            position = 0;
+        }
+        while (train.getCarriages().size() != 0);
+        train.setCarriages(list);
     }
 
-    public static boolean sortCarriageByIncreaseAmountPassanger()
+    public static void sortCarriageByDescendingAmountPassanger(PassengerTrain train)
     {
-        return false;
+        Carriage carriage = train.getCarriages().get(0);
+        int position = 0;
+        List<Carriage> list = new ArrayList<>();
+        do {
+            for (Carriage obj : train.getCarriages()) {
+                if(obj.getPassengers().size() >= carriage.getPassengers().size())
+                {
+                    carriage = train.getCarriages().get(position);
+                    position ++;
+                }
+                else
+                    position++;
+            }
+            list.add(carriage);
+            train.getCarriages().remove(carriage);
+            if(train.getCarriages().size() != 0)
+                carriage = train.getCarriages().get(0);
+            position = 0;
+        }
+        while (train.getCarriages().size() != 0);
+        train.setCarriages(list);
     }
 
-    public static boolean sortCarriageByDescendingAmountPassanger()
+    public static void sortCarriageByComfort(PassengerTrain train)
     {
-        return false;
+        List<Carriage> list = new ArrayList<>();
+        for (Carriage obj : train.getCarriages()) {
+            if(obj.getStyle() == StyleCarriage.COMMON)
+            {
+                list.add(obj);
+            }
+        }
+        for (Carriage obj : train.getCarriages()) {
+            if(obj.getStyle() == StyleCarriage.COMPARTMENTS)
+            {
+                list.add(obj);
+            }
+        }
+        train.setCarriages(list);
     }
 
-    public static boolean sortCarriageByComfort()
+    public static int searchCarriageByAmountPassangerByLimit(int a, int b,PassengerTrain train)
     {
-        return false;
+        int kol = 0;
+        for (Carriage obj:train.getCarriages()) {
+            if(obj.getPassengers().size() > a && obj.getPassengers().size() < b)
+                kol++;
+        }
+        return kol;
     }
 
-    public static int searchCarriageByAmountPassanger(int a, int b)
+    public static int searchCarriageByWeightLuggagePassanger(double a, double b, PassengerTrain train)
     {
-        return 0;
+        int kol = 0;
+        for (Carriage obj:train.getCarriages()) {
+            if(CarriageManagement.getWeightLuggageCarriage(obj) > a && CarriageManagement.getWeightLuggageCarriage(obj) < b)
+                kol++;
+        }
+        return kol;
     }
 
-    public static int searchCarriageByWeightLuggagePassanger(double a, double b)
+    public static int searchCarriageByComfort(StyleCarriage q, PassengerTrain train)
     {
-        return 0;
-    }
-
-    public static int searchCarriageByComfort(StyleCarriage q)
-    {
-        return 0;
+        int kol = 0;
+        for (Carriage obj:train.getCarriages()) {
+            if(obj.getStyle() == q)
+                kol++;
+        }
+        return kol;
     }
 }
