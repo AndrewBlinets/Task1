@@ -9,6 +9,8 @@ import by.andrewblinets.transport.ui.create.CreatePassenger;
 import by.andrewblinets.transport.ui.create.CreateTrain;
 import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 
+import java.util.ArrayList;
+
 /**
  * Created by Андрей on 21.03.2017.
  */
@@ -23,12 +25,12 @@ public class CreateInformation extends UserInterface  implements IteanMenu {
 
     public CreateInformation() {
         super();
-        this.menu = new IteanMenu[5];
-        this.menu[0] = new CreateTrain();
-        this.menu[1] = new CreateCarriage();
-        this.menu[2] = new CreatePassenger();
-        this.menu[3] = new CreateLuggage();
-        this.menu[4] = new ExitFromMenu();
+        this.menu = new ArrayList<>();
+        this.menu.add(new CreateTrain());
+        this.menu.add(new CreateCarriage());
+        this.menu.add(new CreatePassenger());
+        this.menu.add(new CreateLuggage());
+        this.menu.add(new ExitFromMenu());
     }
 
     @Override

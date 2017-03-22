@@ -10,6 +10,8 @@ import by.andrewblinets.transport.ui.show.ShowTrain;
 import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
+import java.util.ArrayList;
+
 /**
  * Created by Андрей on 21.03.2017.
  */
@@ -23,12 +25,12 @@ public class ShowInformation extends UserInterface implements IteanMenu {
 
     public ShowInformation() {
         super();
-        this.menu = new IteanMenu[5];
-        this.menu[0] = new ShowTrain();
-        this.menu[1] = new ShowCarriage();
-        this.menu[2] = new ShowPassenger();
-        this.menu[3] = new ShowLuggage();
-        this.menu[4] = new ExitFromMenu();
+        this.menu = new ArrayList<>();
+        this.menu.add(new ShowTrain());
+        this.menu.add(new ShowCarriage());
+        this.menu.add(new ShowPassenger());
+        this.menu.add(new ShowLuggage());
+        this.menu.add(new ExitFromMenu());
     }
 
     @Override

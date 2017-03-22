@@ -12,6 +12,8 @@ import by.andrewblinets.transport.ui.read.ReadTextFile;
 import by.andrewblinets.transport.ui.read.ReadXmlFile;
 import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 
+import java.util.ArrayList;
+
 /**
  * Created by Андрей on 21.03.2017.
  */
@@ -24,11 +26,11 @@ public class ReadFile extends UserInterface implements IteanMenu {
 
     public ReadFile() {
         super();
-        this.menu = new IteanMenu[5];
-        this.menu[0] = new ReadTextFile();
-        this.menu[1] = new ReadXmlFile();
-        this.menu[2] = new ReadJsonFile();
-        this.menu[3] = new ExitFromMenu();
+        this.menu = new ArrayList<>();
+        this.menu.add(new ReadTextFile());
+        this.menu.add(new ReadXmlFile());
+        this.menu.add(new ReadJsonFile());
+        this.menu.add(new ExitFromMenu());
     }
 
     @Override

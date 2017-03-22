@@ -1,6 +1,9 @@
 Luggage:
-id = 1 name = 654 weight = 465.0
+id = 1 name = fb weight = 456.0
 : Passenger:
-id = 1 name = 1321 lastName = 6454 luggages = [id = 1 name = 654 weight = 465.0 ]
+id = 1 name = erw lastName = et luggages = [id = 1 name = fb weight = 456.0 ]
 : Carriage:
+id = 1 style = COMMON passengers = []
+id = 2 style = COMPARTMENTS passengers = []
 : Train:
+id = 1  departurePoint = qwe arrivedPoint = asd carriages = []

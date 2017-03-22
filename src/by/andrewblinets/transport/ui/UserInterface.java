@@ -17,7 +17,7 @@ public class UserInterface {
     private List<Carriage> carriages;
     private List<Luggage> luggages;
 
-    protected IteanMenu[] menu;
+    protected List<IteanMenu> menu;
 
 
     private final String MENU = "\tMenu\n" +
@@ -33,13 +33,13 @@ public class UserInterface {
 
     public UserInterface(int i) {
         super();
-        this.menu = new IteanMenu[6];
-        this.menu[0] = new CreateInformation();
-        this.menu[1] = new EditingOfInformation();
-        this.menu[2] = new ShowInformation();
-        this.menu[3] = new ReadFile();
-        this.menu[4] = new WriteFile();
-        this.menu[5] = new ExitFromMenu();
+        this.menu = new ArrayList<>();
+        this.menu.add(new CreateInformation());
+        this.menu.add(new EditingOfInformation());
+        this.menu.add(new ShowInformation());
+        this.menu.add(new ReadFile());
+        this.menu.add(new WriteFile());
+        this.menu.add(new ExitFromMenu());
         passengers = new ArrayList<>();
         passengerTrains = new ArrayList<>();
         carriages = new ArrayList<>();
@@ -50,11 +50,11 @@ public class UserInterface {
         return MENU;
     }
 
-    public IteanMenu[] getMenu() {
+    public List<IteanMenu> getMenu() {
         return menu;
     }
 
-    public void setMenu(IteanMenu[] menu) {
+    public void setMenu(List<IteanMenu> menu) {
         this.menu = menu;
     }
 

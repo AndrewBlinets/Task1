@@ -8,6 +8,8 @@ import by.andrewblinets.transport.ui.write.WriteJsonFile;
 import by.andrewblinets.transport.ui.write.WriteTextFile;
 import by.andrewblinets.transport.ui.write.WriteXmlFile;
 
+import java.util.ArrayList;
+
 /**
  * Created by Андрей on 21.03.2017.
  */
@@ -20,11 +22,11 @@ public class WriteFile extends UserInterface implements IteanMenu {
 
     public WriteFile() {
         super();
-        this.menu = new IteanMenu[5];
-        this.menu[0] = new WriteTextFile();
-        this.menu[1] = new WriteXmlFile();
-        this.menu[2] = new WriteJsonFile();
-        this.menu[3] = new ExitFromMenu();
+        this.menu = new ArrayList<>();
+        this.menu.add(new WriteTextFile());
+        this.menu.add(new WriteXmlFile());
+        this.menu.add(new WriteJsonFile());
+        this.menu.add(new ExitFromMenu());
     }
 
     @Override

@@ -9,6 +9,8 @@ import by.andrewblinets.transport.ui.edit.EditingOfPassenger;
 import by.andrewblinets.transport.ui.edit.EditingOfTrain;
 import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 
+import java.util.ArrayList;
+
 /**
  * Created by Андрей on 21.03.2017.
  */
@@ -23,12 +25,12 @@ public class EditingOfInformation extends UserInterface implements IteanMenu {
 
     public EditingOfInformation() {
         super();
-        this.menu = new IteanMenu[5];
-        this.menu[0] = new EditingOfTrain();
-        this.menu[1] = new EditingOfCarriage();
-        this.menu[2] = new EditingOfPassenger();
-        this.menu[3] = new EditingOfLuggage();
-        this.menu[4] = new ExitFromMenu();
+        this.menu = new ArrayList<>();
+        this.menu.add(new EditingOfTrain());
+        this.menu.add(new EditingOfCarriage());
+        this.menu.add(new EditingOfPassenger());
+        this.menu.add(new EditingOfLuggage());
+        this.menu.add(new ExitFromMenu());
     }
 
     @Override
