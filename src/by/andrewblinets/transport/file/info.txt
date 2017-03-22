@@ -1,0 +1,6 @@
+Luggage:
+id = 1 name = 654 weight = 465.0
+: Passenger:
+id = 1 name = 1321 lastName = 6454 luggages = [id = 1 name = 654 weight = 465.0 ]
+: Carriage:
+: Train:

@@ -74,7 +74,7 @@ public class CreatePassenger implements IteanMenu {
                 }
                 case 2:
                 {
-                    passenger.getLuggages().add(userInterface.getLuggages().get((int)new CreateLuggage().create(userInterface)));
+                    passenger.getLuggages().add(userInterface.getLuggages().get((int)new CreateLuggage().create(userInterface) - 1));
                     break;
                 }
                 case 3:
