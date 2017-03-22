@@ -12,6 +12,10 @@ public class Luggage {
     public Luggage() {
     }
 
+    public Luggage(long id) {
+        this.id = id;
+    }
+
     public Luggage(long id, String name, double weight) {
         this.id = id;
         this.name = name;
@@ -68,10 +72,8 @@ public class Luggage {
 
     @Override
     public String toString() {
-        return "Luggage{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", weight=" + weight +
-                '}';
+        return "id = " + id +
+                " name = " + name  +
+                " weight = " + weight;
     }
 }

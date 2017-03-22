@@ -2,6 +2,7 @@ package by.andrewblinets.transport.entity;
 
 import by.andrewblinets.transport.enumes.StyleCarriage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,18 +11,18 @@ import java.util.List;
 public class Carriage {
 
     private long id;
-    private double numbers;
     private List<Passenger> passengers;
-    private StyleCarriage carriage;
+    private StyleCarriage style;
 
-    public Carriage() {
+    public Carriage(long id) {
+        this.id = id;
+        this.passengers = new ArrayList<>();
     }
 
-    public Carriage(long id, double numbers, List<Passenger> passengers, StyleCarriage carriage) {
+    public Carriage(long id, int numbers, List<Passenger> passengers, StyleCarriage style) {
         this.id = id;
-        this.numbers = numbers;
         this.passengers = passengers;
-        this.carriage = carriage;
+        this.style = style;
     }
 
     public long getId() {
@@ -32,14 +33,6 @@ public class Carriage {
         this.id = id;
     }
 
-    public double getNumbers() {
-        return numbers;
-    }
-
-    public void setNumbers(double numbers) {
-        this.numbers = numbers;
-    }
-
     public List<Passenger> getPassengers() {
         return passengers;
     }
@@ -48,12 +41,12 @@ public class Carriage {
         this.passengers = passengers;
     }
 
-    public StyleCarriage getCarriage() {
-        return carriage;
+    public StyleCarriage getStyle() {
+        return style;
     }
 
-    public void setCarriage(StyleCarriage carriage) {
-        this.carriage = carriage;
+    public void setStyle(StyleCarriage style) {
+        this.style = style;
     }
 
     @Override
@@ -64,31 +57,28 @@ public class Carriage {
         Carriage carriage1 = (Carriage) o;
 
         if (id != carriage1.id) return false;
-        if (Double.compare(carriage1.numbers, numbers) != 0) return false;
         if (passengers != null ? !passengers.equals(carriage1.passengers) : carriage1.passengers != null) return false;
-        return carriage == carriage1.carriage;
+        return style == carriage1.style;
 
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = (int) (id ^ (id >>> 32));
-        temp = Double.doubleToLongBits(numbers);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (passengers != null ? passengers.hashCode() : 0);
-        result = 31 * result + (carriage != null ? carriage.hashCode() : 0);
+        result = 31 * result + (style != null ? style.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        return "Carriage{" +
-                "id=" + id +
-                ", numbers=" + numbers +
-                ", passengers=" + passengers +
-                ", carriage=" + carriage +
-                '}';
+        String str =  "id = " + id +
+                " style = " + style +
+                " passengers = [";
+        for (Passenger passenger : passengers) {
+            str += passenger.toString() + " ";
+        }
+        str += "]";
+        return str;
     }
 }
