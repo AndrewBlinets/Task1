@@ -34,7 +34,6 @@ public class CreateCarriage implements IteamMenu {
 
     private StyleCarriage style()
     {
-        boolean flagStop;
         do {
             switch (keyboard.readInt("Specify the type of carriage\n1-COMMON\n2-COMPARTMENTS\n"))
             {
@@ -44,12 +43,10 @@ public class CreateCarriage implements IteamMenu {
                     return StyleCarriage.COMPARTMENTS;
                 default:
                 {
-                    flagStop = true;
                     System.out.println("Enter a value from 1 to 2");
                 }
             }
         }
-        while (flagStop);
-        return StyleCarriage.COMMON;
+        while (true);
     }
 }

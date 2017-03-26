@@ -22,7 +22,6 @@ public class ShowStyle implements IteamMenu {
                 int iteam = keyboard.readInt("Enter the number of the Train show\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)
                 {
-                    boolean flagStop;
                     do {
                         switch (keyboard.readInt("Specify the type of carriage\n1-COMMON\n2-COMPARTMENTS\n"))
                         {
@@ -49,12 +48,11 @@ public class ShowStyle implements IteamMenu {
                             }
                             default:
                             {
-                                flagStop = true;
                                 System.out.println("Enter a value from 1 to 2");
                             }
                         }
                     }
-                    while (flagStop);
+                    while (true);
                 }
                 else
                 {

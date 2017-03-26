@@ -21,7 +21,6 @@ public class SortTrain implements IteamMenu {
                 int iteam = keyboard.readInt("Enter the number of the item to sort carriage\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)
                 {
-                    boolean flagStop;
                     do {
                         switch (keyboard.readInt("Select type\n1-IncreaseAmountPassanger\n" +
                                 "2-DescendingAmountPassanger\n" +
@@ -49,13 +48,11 @@ public class SortTrain implements IteamMenu {
                             }
                             default:
                             {
-                                flagStop = true;
                                 System.out.println("Enter a value from 1 to 2");
                             }
                         }
                     }
-                    while (flagStop);
-                    break;
+                    while (true);
                 }
                 else
                 {

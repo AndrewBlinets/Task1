@@ -23,7 +23,6 @@ public class AddToTrainCarriage implements IteamMenu {
                 int iteam = keyboard.readInt("Enter the number of the item to add carriage\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)
                 {
-                    boolean flagStop;
                     do {
                         switch (keyboard.readInt("Add carriage\n1-new\n2-existing\n"))
                         {
@@ -44,13 +43,11 @@ public class AddToTrainCarriage implements IteamMenu {
                             }
                             default:
                             {
-                                flagStop = true;
                                 System.out.println("Enter a value from 1 to 2");
                             }
                         }
                     }
-                    while (flagStop);
-                    break;
+                    while (true);
                 }
                 else
                 {
