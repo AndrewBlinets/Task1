@@ -4,7 +4,7 @@ import by.andrewblinets.transport.entity.Carriage;
 import by.andrewblinets.transport.entity.Luggage;
 import by.andrewblinets.transport.entity.Passenger;
 import by.andrewblinets.transport.entity.PassengerTrain;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -20,10 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class WriteXmlFile implements IteanMenu {
+public class WriteXmlFile implements IteamMenu {
     private DocumentBuilder builder;
     private Document doc;
 

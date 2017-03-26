@@ -1,7 +1,7 @@
 package by.andrewblinets.transport.ui.main;
 
 import by.andrewblinets.transport.ui.ExitFromMenu;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.create.CreateCarriage;
 import by.andrewblinets.transport.ui.create.CreateLuggage;
@@ -11,10 +11,7 @@ import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 
 import java.util.ArrayList;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class CreateInformation extends UserInterface  implements IteanMenu {
+public class CreateInformation extends UserInterface  implements IteamMenu {
 
     private final String CREATE = "\tMenu Create\n" +
             "1-Create Train\n" +
@@ -25,12 +22,12 @@ public class CreateInformation extends UserInterface  implements IteanMenu {
 
     public CreateInformation() {
         super();
-        this.menu = new ArrayList<>();
-        this.menu.add(new CreateTrain());
-        this.menu.add(new CreateCarriage());
-        this.menu.add(new CreatePassenger());
-        this.menu.add(new CreateLuggage());
-        this.menu.add(new ExitFromMenu());
+        this.iteamsMenu = new ArrayList<>();
+        this.iteamsMenu.add(new CreateTrain());
+        this.iteamsMenu.add(new CreateCarriage());
+        this.iteamsMenu.add(new CreatePassenger());
+        this.iteamsMenu.add(new CreateLuggage());
+        this.iteamsMenu.add(new ExitFromMenu());
     }
 
     @Override
@@ -38,7 +35,7 @@ public class CreateInformation extends UserInterface  implements IteanMenu {
         do {
             System.out.println(CREATE);
         }
-        while (IteamMenuManagement.MainMenu(menu,userInterface));
+        while (IteamMenuManagement.MainMenu(iteamsMenu,userInterface));
         return true;
     }
 }

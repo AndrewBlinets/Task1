@@ -1,13 +1,11 @@
 package by.andrewblinets.transport.ui.show.train;
 
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 import by.andrewblinets.transport.utils.TrainManagement;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class ShowAmountFromTo implements by.andrewblinets.transport.ui.IteanMenu {
+public class ShowAmountFromTo implements IteamMenu {
 
     private KeyboardWork keyboard;
 

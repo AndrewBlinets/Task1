@@ -1,15 +1,11 @@
 package by.andrewblinets.transport.ui.show.train;
 
-import by.andrewblinets.transport.enumes.StyleCarriage;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 import by.andrewblinets.transport.utils.TrainManagement;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class ShowWeightFromTo implements IteanMenu {
+public class ShowWeightFromTo implements IteamMenu {
 
     private KeyboardWork keyboard;
 

@@ -1,14 +1,11 @@
 package by.andrewblinets.transport.ui.edit.train;
 
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.show.train.SpisokTrains;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class RemoveFromTrainCarriage implements IteanMenu {
+public class RemoveFromTrainCarriage implements IteamMenu {
 
     private KeyboardWork keyboard;
 

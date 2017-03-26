@@ -1,7 +1,7 @@
 package by.andrewblinets.transport.ui.main;
 
 import by.andrewblinets.transport.ui.ExitFromMenu;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.read.ReadTextFile;
 import by.andrewblinets.transport.ui.read.ReadXmlFile;
@@ -9,10 +9,7 @@ import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 
 import java.util.ArrayList;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class ReadFile extends UserInterface implements IteanMenu {
+public class ReadFile extends UserInterface implements IteamMenu {
     private final String READ = "\tMenu Read\n" +
             "1-Read text file\n" +
             "2-Read xml file\n" +
@@ -21,11 +18,11 @@ public class ReadFile extends UserInterface implements IteanMenu {
 
     public ReadFile() {
         super();
-        this.menu = new ArrayList<>();
-        this.menu.add(new ReadTextFile());
-        this.menu.add(new ReadXmlFile());
-      //  this.menu.add(new ReadJsonFile());
-        this.menu.add(new ExitFromMenu());
+        this.iteamsMenu = new ArrayList<>();
+        this.iteamsMenu.add(new ReadTextFile());
+        this.iteamsMenu.add(new ReadXmlFile());
+      //  this.iteamsMenu.add(new ReadJsonFile());
+        this.iteamsMenu.add(new ExitFromMenu());
     }
 
     @Override
@@ -33,7 +30,7 @@ public class ReadFile extends UserInterface implements IteanMenu {
         do {
             System.out.println(READ);
         }
-        while (IteamMenuManagement.MainMenu(menu,userInterface));
+        while (IteamMenuManagement.MainMenu(iteamsMenu,userInterface));
         return true;
     }
 }

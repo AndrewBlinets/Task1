@@ -1,15 +1,11 @@
 package by.andrewblinets.transport.ui.edit.carriage;
 
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.show.ShowCarriage;
-import by.andrewblinets.transport.ui.show.ShowLuggage;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class RemoveCarriage implements IteanMenu {
+public class RemoveCarriage implements IteamMenu {
 
     private KeyboardWork keyboard;
 

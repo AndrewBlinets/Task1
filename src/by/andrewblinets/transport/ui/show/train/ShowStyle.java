@@ -1,15 +1,12 @@
 package by.andrewblinets.transport.ui.show.train;
 
 import by.andrewblinets.transport.enumes.StyleCarriage;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 import by.andrewblinets.transport.utils.TrainManagement;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class ShowStyle implements IteanMenu {
+public class ShowStyle implements IteamMenu {
 
     private KeyboardWork keyboard;
 
@@ -25,7 +22,7 @@ public class ShowStyle implements IteanMenu {
                 int iteam = keyboard.readInt("Enter the number of the Train show\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)
                 {
-                    boolean flagStop = false;
+                    boolean flagStop;
                     do {
                         switch (keyboard.readInt("Specify the type of carriage\n1-COMMON\n2-COMPARTMENTS\n"))
                         {

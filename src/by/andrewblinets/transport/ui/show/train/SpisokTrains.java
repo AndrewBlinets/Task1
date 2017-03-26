@@ -1,13 +1,10 @@
 package by.andrewblinets.transport.ui.show.train;
 
 import by.andrewblinets.transport.entity.PassengerTrain;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class SpisokTrains implements IteanMenu {
+public class SpisokTrains implements IteamMenu {
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
         show(userInterface);

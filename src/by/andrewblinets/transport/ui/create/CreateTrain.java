@@ -1,14 +1,11 @@
 package by.andrewblinets.transport.ui.create;
 
 import by.andrewblinets.transport.entity.PassengerTrain;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class CreateTrain implements IteanMenu {
+public class CreateTrain implements IteamMenu {
 
     private KeyboardWork keyboard;
 

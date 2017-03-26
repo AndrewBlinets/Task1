@@ -1,16 +1,13 @@
 package by.andrewblinets.transport.ui.edit.train;
 
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.create.CreateCarriage;
 import by.andrewblinets.transport.ui.show.ShowCarriage;
 import by.andrewblinets.transport.ui.show.train.SpisokTrains;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class AddToTrainCarriage implements IteanMenu {
+public class AddToTrainCarriage implements IteamMenu {
 
     private KeyboardWork keyboard;
 
@@ -26,7 +23,7 @@ public class AddToTrainCarriage implements IteanMenu {
                 int iteam = keyboard.readInt("Enter the number of the item to add carriage\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)
                 {
-                    boolean flagStop = false;
+                    boolean flagStop;
                     do {
                         switch (keyboard.readInt("Add carriage\n1-new\n2-existing\n"))
                         {

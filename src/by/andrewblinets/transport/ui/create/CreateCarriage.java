@@ -2,14 +2,11 @@ package by.andrewblinets.transport.ui.create;
 
 import by.andrewblinets.transport.entity.Carriage;
 import by.andrewblinets.transport.enumes.StyleCarriage;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class CreateCarriage implements IteanMenu {
+public class CreateCarriage implements IteamMenu {
 
     private KeyboardWork keyboard;
 
@@ -37,7 +34,7 @@ public class CreateCarriage implements IteanMenu {
 
     private StyleCarriage style()
     {
-        boolean flagStop = false;
+        boolean flagStop;
         do {
             switch (keyboard.readInt("Specify the type of carriage\n1-COMMON\n2-COMPARTMENTS\n"))
             {

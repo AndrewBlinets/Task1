@@ -2,15 +2,12 @@ package by.andrewblinets.transport.ui.create;
 
 import by.andrewblinets.transport.entity.Luggage;
 import by.andrewblinets.transport.entity.Passenger;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.show.ShowLuggage;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class CreatePassenger implements IteanMenu {
+public class CreatePassenger implements IteamMenu {
 
     private KeyboardWork keyboard;
 
@@ -45,7 +42,7 @@ public class CreatePassenger implements IteanMenu {
                     }
                     else
                     new ShowLuggage().show(userInterface);
-                    int number = 0;
+                    int number;
                     do {
                         number = keyboard.readInt("Enter the item number\n");
                         if(number > userInterface.getLuggages().size())

@@ -1,14 +1,11 @@
 package by.andrewblinets.transport.ui.create;
 
 import by.andrewblinets.transport.entity.Luggage;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class CreateLuggage implements IteanMenu {
+public class CreateLuggage implements IteamMenu {
 
     private KeyboardWork keyboard;
 

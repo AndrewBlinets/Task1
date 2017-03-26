@@ -1,15 +1,11 @@
 package by.andrewblinets.transport.ui.edit.passenger;
 
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
-import by.andrewblinets.transport.ui.show.ShowLuggage;
 import by.andrewblinets.transport.ui.show.ShowPassenger;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class RemovePassenger implements IteanMenu {
+public class RemovePassenger implements IteamMenu {
     private KeyboardWork keyboard;
 
     public RemovePassenger() {

@@ -1,16 +1,12 @@
 package by.andrewblinets.transport.ui.edit.train;
 
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
-import by.andrewblinets.transport.ui.create.CreateCarriage;
 import by.andrewblinets.transport.ui.show.train.SpisokTrains;
 import by.andrewblinets.transport.ui.util.KeyboardWork;
 import by.andrewblinets.transport.utils.TrainManagement;
 
-/**
- * Created by Андрей on 22.03.2017.
- */
-public class SortTrain implements IteanMenu {
+public class SortTrain implements IteamMenu {
 
     private KeyboardWork keyboard;
 
@@ -25,7 +21,7 @@ public class SortTrain implements IteanMenu {
                 int iteam = keyboard.readInt("Enter the number of the item to sort carriage\n");
                 if(iteam < userInterface.getPassengerTrains().size() + 1)
                 {
-                    boolean flagStop = false;
+                    boolean flagStop;
                     do {
                         switch (keyboard.readInt("Select type\n1-IncreaseAmountPassanger\n" +
                                 "2-DescendingAmountPassanger\n" +

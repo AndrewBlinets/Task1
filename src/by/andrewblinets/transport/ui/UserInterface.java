@@ -6,10 +6,6 @@ import by.andrewblinets.transport.ui.main.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * Created by Андрей on 20.03.2017.
- */
 public class UserInterface {
 
     private List<PassengerTrain> passengerTrains;
@@ -17,10 +13,10 @@ public class UserInterface {
     private List<Carriage> carriages;
     private List<Luggage> luggages;
 
-    protected List<IteanMenu> menu;
+    protected List<IteamMenu> iteamsMenu;
 
 
-    private final String MENU = "\tMenu\n" +
+    private final String MAINMENU = "\tMenu\n" +
             "1-Create information\n" +
             "2-Edit information\n" +
             "3-Show information\n" +
@@ -33,29 +29,29 @@ public class UserInterface {
 
     public UserInterface(int i) {
         super();
-        this.menu = new ArrayList<>();
-        this.menu.add(new CreateInformation());
-        this.menu.add(new EditingOfInformation());
-        this.menu.add(new ShowInformation());
-        this.menu.add(new ReadFile());
-        this.menu.add(new WriteFile());
-        this.menu.add(new ExitFromMenu());
+        this.iteamsMenu = new ArrayList<>();
+        this.iteamsMenu.add(new CreateInformation());
+        this.iteamsMenu.add(new EditingOfInformation());
+        this.iteamsMenu.add(new ShowInformation());
+        this.iteamsMenu.add(new ReadFile());
+        this.iteamsMenu.add(new WriteFile());
+        this.iteamsMenu.add(new ExitFromMenu());
         passengers = new ArrayList<>();
         passengerTrains = new ArrayList<>();
         carriages = new ArrayList<>();
         luggages = new ArrayList<>();
     }
 
-    public String getMENU() {
-        return MENU;
+    public String getMAINMENU() {
+        return MAINMENU;
     }
 
-    public List<IteanMenu> getMenu() {
-        return menu;
+    public List<IteamMenu> getIteamsMenu() {
+        return iteamsMenu;
     }
 
-    public void setMenu(List<IteanMenu> menu) {
-        this.menu = menu;
+    public void setIteamsMenu(List<IteamMenu> iteamsMenu) {
+        this.iteamsMenu = iteamsMenu;
     }
 
     public List<PassengerTrain> getPassengerTrains() {

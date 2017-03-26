@@ -1,13 +1,10 @@
 package by.andrewblinets.transport.ui.show;
 
 import by.andrewblinets.transport.entity.Luggage;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class ShowLuggage implements IteanMenu {
+public class ShowLuggage implements IteamMenu {
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
         show(userInterface);

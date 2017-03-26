@@ -1,7 +1,7 @@
 package by.andrewblinets.transport.ui.show;
 
 import by.andrewblinets.transport.ui.ExitFromMenu;
-import by.andrewblinets.transport.ui.IteanMenu;
+import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.show.train.ShowAmountFromTo;
 import by.andrewblinets.transport.ui.show.train.ShowStyle;
@@ -11,10 +11,7 @@ import by.andrewblinets.transport.ui.util.IteamMenuManagement;
 
 import java.util.ArrayList;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class ShowTrain extends UserInterface implements IteanMenu {
+public class ShowTrain extends UserInterface implements IteamMenu {
     private final String SHOW = "\tMenu show\n" +
             "1-show all\n" +
             "2-Show Amount from ... to ... \n" +
@@ -24,12 +21,12 @@ public class ShowTrain extends UserInterface implements IteanMenu {
 
     public ShowTrain() {
         super();
-        this.menu = new ArrayList<>();
-        this.menu.add(new SpisokTrains());
-        this.menu.add(new ShowAmountFromTo());
-        this.menu.add(new ShowWeightFromTo());
-        this.menu.add(new ShowStyle());
-        this.menu.add(new ExitFromMenu());
+        this.iteamsMenu = new ArrayList<>();
+        this.iteamsMenu.add(new SpisokTrains());
+        this.iteamsMenu.add(new ShowAmountFromTo());
+        this.iteamsMenu.add(new ShowWeightFromTo());
+        this.iteamsMenu.add(new ShowStyle());
+        this.iteamsMenu.add(new ExitFromMenu());
     }
 
     @Override
@@ -37,7 +34,7 @@ public class ShowTrain extends UserInterface implements IteanMenu {
         do {
             System.out.println(SHOW);
         }
-        while (IteamMenuManagement.MainMenu(menu,userInterface));
+        while (IteamMenuManagement.MainMenu(iteamsMenu,userInterface));
         return true;
     }
 }

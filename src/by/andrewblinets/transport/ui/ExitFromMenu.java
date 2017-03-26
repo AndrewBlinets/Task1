@@ -1,9 +1,6 @@
 package by.andrewblinets.transport.ui;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
-public class ExitFromMenu implements IteanMenu {
+public class ExitFromMenu implements IteamMenu {
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
         return false;
