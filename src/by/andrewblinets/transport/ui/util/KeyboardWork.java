@@ -4,16 +4,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Андрей on 21.03.2017.
- */
+
 public class KeyboardWork {
 
     private BufferedReader in;
     private boolean flagError;
 
     public KeyboardWork() {
-        this.in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            this.in = new BufferedReader(new InputStreamReader(System.in));
+        }
+        catch (Throwable t)
+        {
+            System.out.println(t.getMessage());
+        }
         this.flagError =  false;
     }
 
