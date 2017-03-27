@@ -4,6 +4,7 @@ import by.andrewblinets.transport.ui.ExitFromMenu;
 import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.util.IteamMenuManagement;
+import by.andrewblinets.transport.ui.write.WriteJsonFile;
 import by.andrewblinets.transport.ui.write.WriteTextFile;
 import by.andrewblinets.transport.ui.write.WriteXmlFile;
 
@@ -13,7 +14,7 @@ public class WriteFile extends UserInterface implements IteamMenu {
     private final String WRITE = "\tMenu write\n" +
             "1-Write text file\n" +
             "2-Write xml file\n" +
-            //"3-Write json fiel\n" +
+            "3-Write json fiel\n" +
             "3-Back";
 
     public WriteFile() {
@@ -21,7 +22,7 @@ public class WriteFile extends UserInterface implements IteamMenu {
         this.iteamsMenu = new ArrayList<>();
         this.iteamsMenu.add(new WriteTextFile());
         this.iteamsMenu.add(new WriteXmlFile());
-       // this.iteamsMenu.add(new WriteJsonFile());
+        this.iteamsMenu.add(new WriteJsonFile());
         this.iteamsMenu.add(new ExitFromMenu());
     }
 

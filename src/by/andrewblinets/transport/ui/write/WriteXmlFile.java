@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 import java.util.List;
 
 public class WriteXmlFile implements IteamMenu {
+
     private DocumentBuilder builder;
     private Document doc;
 
@@ -37,15 +38,11 @@ public class WriteXmlFile implements IteamMenu {
 
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
-        try {
-            write(userInterface);
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        }
+        write(userInterface);
         return true;
     }
 
-    private void write(UserInterface userInterface) throws TransformerException {
+    private void write(UserInterface userInterface){
         Element rootElement = doc.createElement("transport");
         createLuggages(userInterface.getLuggages(),rootElement);
         createPassenger(userInterface.getPassengers(),rootElement);
@@ -58,14 +55,16 @@ public class WriteXmlFile implements IteamMenu {
             t.setOutputProperty(OutputKeys.METHOD, "xml");
             t.setOutputProperty(OutputKeys.INDENT, "yes");
         } catch (TransformerConfigurationException e) {
-            e.printStackTrace(); //   Change
+            System.out.println(e.getMessage());
         }
         try {
             t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("src\\by\\andrewblinets\\transport\\file\\info.xml")));
+        }catch (NullPointerException e) {
+            System.out.println(e.getMessage());
         } catch (TransformerException e) {
-            e.printStackTrace();//   Change
+            System.out.println(e.getMessage());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();//   Change
+            System.out.println(e.getMessage());
         }
     }
 
