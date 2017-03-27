@@ -15,7 +15,7 @@ public class WriteFile extends UserInterface implements IteamMenu {
             "1-Write text file\n" +
             "2-Write xml file\n" +
             "3-Write json fiel\n" +
-            "3-Back";
+            "4-Back";
 
     public WriteFile() {
         super();

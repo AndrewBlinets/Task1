@@ -1,1 +1,11 @@
-{"passanger":[],"carriage":[{"passanger":[],"number":"1","style":"COMMON"},{"passanger":[],"number":"2","style":"COMMON"}],"luggages":[],"passengertrain":[{"number":"1","carriage":[{"passanger":[],"number":"2","style":"COMMON"}],"DeparturePoint":"qwe","ArrivedPoint":"qwe"}]}
+{
+  "passanger" : [ ],
+  "carriage" : [ ],
+  "luggages" : [ ],
+  "passengertrain" : [ {
+    "number" : "1",
+    "carriage" : [ ],
+    "DeparturePoint" : "qwe",
+    "ArrivedPoint" : "azcx"
+  } ]
+}

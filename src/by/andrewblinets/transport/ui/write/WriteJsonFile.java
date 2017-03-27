@@ -6,6 +6,8 @@ import by.andrewblinets.transport.entity.Passenger;
 import by.andrewblinets.transport.entity.PassengerTrain;
 import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jdk.nashorn.internal.runtime.JSONListAdapter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -36,7 +38,8 @@ public class WriteJsonFile implements IteamMenu {
         createTrain(userInterface.getPassengerTrains(),jsonObject);
         try(FileWriter writer = new FileWriter("src\\by\\andrewblinets\\transport\\file\\info.json", false))
         {
-            writer.write(jsonObject.toJSONString());
+            writer.write(new ObjectMapper().writerWithDefaultPrettyPrinter()
+                    .writeValueAsString(jsonObject));
         } catch (IOException e) {
             e.printStackTrace();
         }
