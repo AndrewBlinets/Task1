@@ -1,1 +1,7 @@
-{"passanger":[{"name":"asd","luggages":[{"name":"ert","weight":345.0},{"name":"fg","weight":35.0}],"lastname":"zxc"},{"name":"etrertgd","luggages":[{"name":"qew","weight":123.0},{"name":"asd","weight":123.0}],"lastname":"ertertert"},{"name":"cxvcvxcvcxv","luggages":[{"name":"qew","weight":132.0}],"lastname":"cxvcxvxcvcxv"}],"carriage":[{"passanger":[{"name":"etrertgd","luggages":[{"name":"qew","weight":123.0},{"name":"asd","weight":123.0}],"lastname":"ertertert"},{"name":"cxvcvxcvcxv","luggages":[{"name":"qew","weight":132.0}],"lastname":"cxvcxvxcvcxv"}],"number":1,"style":COMMON},{"passanger":[],"number":2,"style":COMPARTMENTS},{"passanger":[],"number":3,"style":COMMON}],"luggages":[{"name":"qwe","weight":132.0},{"name":"ert","weight":345.0},{"name":"fg","weight":35.0},{"name":"qew","weight":123.0},{"name":"asd","weight":123.0},{"name":"qew","weight":132.0}],"passengertrain":[{"number":1,"carriage":[{"passanger":[{"name":"etrertgd","luggages":[{"name":"qew","weight":123.0},{"name":"asd","weight":123.0}],"lastname":"ertertert"},{"name":"cxvcvxcvcxv","luggages":[{"name":"qew","weight":132.0}],"lastname":"cxvcxvxcvcxv"}],"number":1,"style":COMMON}],"DeparturePoint":"minsk","ArrivedPoint":"brast"}]}
+Luggage:
+: Passenger:
+: Carriage:
+id = 1 style = COMMON passengers = []
+id = 2 style = COMMON passengers = []
+: Train:
+id = 1  departurePoint = qwe arrivedPoint = qwe carriages = [id = 2 style = COMMON passengers = [] ]

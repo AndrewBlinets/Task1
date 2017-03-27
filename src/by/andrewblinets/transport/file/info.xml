@@ -1,150 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <transport>
-<luggage>
-<iteam>
-<name>qwe</name>
-<weight>132.0</weight>
-</iteam>
-<iteam>
-<name>ert</name>
-<weight>345.0</weight>
-</iteam>
-<iteam>
-<name>fg</name>
-<weight>35.0</weight>
-</iteam>
-<iteam>
-<name>qew</name>
-<weight>123.0</weight>
-</iteam>
-<iteam>
-<name>asd</name>
-<weight>123.0</weight>
-</iteam>
-<iteam>
-<name>qew</name>
-<weight>132.0</weight>
-</iteam>
-</luggage>
-<passenger>
-<iteam>
-<name>asd</name>
-<lastName>zxc</lastName>
-<luggage>
-<iteam>
-<name>ert</name>
-<weight>345.0</weight>
-</iteam>
-<iteam>
-<name>fg</name>
-<weight>35.0</weight>
-</iteam>
-</luggage>
-</iteam>
-<iteam>
-<name>etrertgd</name>
-<lastName>ertertert</lastName>
-<luggage>
-<iteam>
-<name>qew</name>
-<weight>123.0</weight>
-</iteam>
-<iteam>
-<name>asd</name>
-<weight>123.0</weight>
-</iteam>
-</luggage>
-</iteam>
-<iteam>
-<name>cxvcvxcvcxv</name>
-<lastName>cxvcxvxcvcxv</lastName>
-<luggage>
-<iteam>
-<name>qew</name>
-<weight>132.0</weight>
-</iteam>
-</luggage>
-</iteam>
-</passenger>
-<carriage>
-<iteam>
-<number>1</number>
-<style>COMMON</style>
-<passenger>
-<iteam>
-<name>etrertgd</name>
-<lastName>ertertert</lastName>
-<luggage>
-<iteam>
-<name>qew</name>
-<weight>123.0</weight>
-</iteam>
-<iteam>
-<name>asd</name>
-<weight>123.0</weight>
-</iteam>
-</luggage>
-</iteam>
-<iteam>
-<name>cxvcvxcvcxv</name>
-<lastName>cxvcxvxcvcxv</lastName>
-<luggage>
-<iteam>
-<name>qew</name>
-<weight>132.0</weight>
-</iteam>
-</luggage>
-</iteam>
-</passenger>
-</iteam>
-<iteam>
-<number>2</number>
-<style>COMPARTMENTS</style>
-<passenger/>
-</iteam>
-<iteam>
-<number>3</number>
-<style>COMMON</style>
-<passenger/>
-</iteam>
-</carriage>
-<PassengerTrain>
-<iteam>
-<number>1</number>
-<DeparturePoint>minsk</DeparturePoint>
-<ArrivedPoint>brast</ArrivedPoint>
-<carriage>
-<iteam>
-<number>1</number>
-<style>COMMON</style>
-<passenger>
-<iteam>
-<name>etrertgd</name>
-<lastName>ertertert</lastName>
-<luggage>
-<iteam>
-<name>qew</name>
-<weight>123.0</weight>
-</iteam>
-<iteam>
-<name>asd</name>
-<weight>123.0</weight>
-</iteam>
-</luggage>
-</iteam>
-<iteam>
-<name>cxvcvxcvcxv</name>
-<lastName>cxvcxvxcvcxv</lastName>
-<luggage>
-<iteam>
-<name>qew</name>
-<weight>132.0</weight>
-</iteam>
-</luggage>
-</iteam>
-</passenger>
-</iteam>
-</carriage>
-</iteam>
-</PassengerTrain>
+      <luggage/>
+      <passenger/>
+      <carriage>
+            <iteam>
+                  <number>1</number>
+                  <style>COMMON</style>
+                  <passenger/>
+            </iteam>
+            <iteam>
+                  <number>2</number>
+                  <style>COMMON</style>
+                  <passenger/>
+            </iteam>
+      </carriage>
+      <PassengerTrain>
+            <iteam>
+                  <number>1</number>
+                  <DeparturePoint>qwe</DeparturePoint>
+                  <ArrivedPoint>qwe</ArrivedPoint>
+                  <carriage>
+                        <iteam>
+                              <number>2</number>
+                              <style>COMMON</style>
+                              <passenger/>
+                        </iteam>
+                  </carriage>
+            </iteam>
+      </PassengerTrain>
 </transport>

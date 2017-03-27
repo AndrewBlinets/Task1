@@ -6,9 +6,7 @@ import by.andrewblinets.transport.entity.Passenger;
 import by.andrewblinets.transport.entity.PassengerTrain;
 import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Text;
+import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,9 +14,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+import java.io.*;
 import java.util.List;
 
 public class WriteXmlFile implements IteamMenu {
@@ -49,15 +48,23 @@ public class WriteXmlFile implements IteamMenu {
         createCarriage(userInterface.getCarriages(),rootElement);
         createTrain(userInterface.getPassengerTrains(),rootElement);
         doc.appendChild(rootElement);
-        Transformer t= null;
+
+       /* Transformer t= null;
         try {
             t = TransformerFactory.newInstance().newTransformer();
             t.setOutputProperty(OutputKeys.METHOD, "xml");
             t.setOutputProperty(OutputKeys.INDENT, "yes");
         } catch (TransformerConfigurationException e) {
             System.out.println(e.getMessage());
+        }*/
+        try(FileWriter writer = new FileWriter("src\\by\\andrewblinets\\transport\\file\\info.xml", false))
+        {
+            writer.write(toPrettyXmlString(6, doc));
         }
-        try {
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
+       /* try {
             t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("src\\by\\andrewblinets\\transport\\file\\info.xml")));
         }catch (NullPointerException e) {
             System.out.println(e.getMessage());
@@ -65,7 +72,7 @@ public class WriteXmlFile implements IteamMenu {
             System.out.println(e.getMessage());
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
-        }
+        }*/
     }
 
     private void createTrain(List<PassengerTrain> passengerTrains, Element element) {
@@ -123,5 +130,32 @@ public class WriteXmlFile implements IteamMenu {
             createLuggages(passenger.getLuggages(),item);
         }
         element.appendChild(passengerElement);
+    }
+
+    private String toPrettyXmlString(int indent, Document document) {
+        try {
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            NodeList nodeList = (NodeList) xPath.evaluate(
+                    "//text()[normalize-space()='']",
+                    document,
+                    XPathConstants.NODESET
+            );
+
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Node node = nodeList.item(i);
+                node.getParentNode().removeChild(node);
+            }
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            transformerFactory.setAttribute("indent-number", indent);
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            StringWriter stringWriter = new StringWriter();
+            transformer.transform(new DOMSource(document), new StreamResult(stringWriter));
+            return stringWriter.toString();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
