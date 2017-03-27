@@ -16,6 +16,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
@@ -36,11 +37,15 @@ public class WriteXmlFile implements IteamMenu {
 
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
-        write(userInterface);
+        try {
+            write(userInterface);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
         return true;
     }
 
-    private void write(UserInterface userInterface) {
+    private void write(UserInterface userInterface) throws TransformerException {
         Element rootElement = doc.createElement("transport");
         createLuggages(userInterface.getLuggages(),rootElement);
         createPassenger(userInterface.getPassengers(),rootElement);
@@ -73,7 +78,7 @@ public class WriteXmlFile implements IteamMenu {
             passengerTrainElement.appendChild(item);
             createElementXml(item, doc.createElement("ArrivedPoint"), doc.createTextNode(passengerTrain.getArrivedPoint()));
             passengerTrainElement.appendChild(item);
-            createCarriage(passengerTrain.getCarriages(),passengerTrainElement);
+            createCarriage(passengerTrain.getCarriages(),item);
         }
         element.appendChild(passengerTrainElement);
     }
@@ -91,7 +96,7 @@ public class WriteXmlFile implements IteamMenu {
             createElementXml(item, doc.createElement("number"), doc.createTextNode(String.valueOf(carriage.getId())));
             createElementXml(item, doc.createElement("style"), doc.createTextNode(String.valueOf(carriage.getStyle())));
             carriageElement.appendChild(item);
-            createPassenger(carriage.getPassengers(),carriageElement);
+            createPassenger(carriage.getPassengers(),item);
         }
         element.appendChild(carriageElement);
     }
@@ -116,7 +121,7 @@ public class WriteXmlFile implements IteamMenu {
             createElementXml(item, doc.createElement("name"), doc.createTextNode(passenger.getName()));
             createElementXml(item, doc.createElement("lastName"), doc.createTextNode(passenger.getLastName()));
             passengerElement.appendChild(item);
-            createLuggages(passenger.getLuggages(),passengerElement);
+            createLuggages(passenger.getLuggages(),item);
         }
         element.appendChild(passengerElement);
     }
