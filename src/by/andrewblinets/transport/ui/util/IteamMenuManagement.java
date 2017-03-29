@@ -26,6 +26,10 @@ public class IteamMenuManagement {
             try {
                 return menu.get(new KeyboardWork().readInt("") - 1).MenuIteam(userInterface);
             }
+            catch (UnsupportedOperationException e) {
+                System.out.println("At the moment the implementation of the method is not supported, sorry.");
+                return true;
+            }
             catch (IndexOutOfBoundsException e) {
                 System.out.println("Enter the value corresponding to the iteamsMenu items!!!");
                 return true;

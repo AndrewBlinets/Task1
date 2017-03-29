@@ -2,9 +2,7 @@ package by.andrewblinets.transport.entity;
 
 import by.andrewblinets.transport.interfaces.Schedullable;
 
-/**
- * Created by Андрей on 20.03.2017.
- */
+
 public abstract class Train implements Schedullable {
 
     private long id;
@@ -14,13 +12,8 @@ public abstract class Train implements Schedullable {
     public abstract void addCarriage(Carriage carriage);
     public abstract void removeCarriageByNumber(int numbers);
 
-    public Train() {
-    }
-
-    public Train(long id, String departurePoint, String arrivedPoint, int number) {
+    public Train(long id) {
         this.id = id;
-        this.departurePoint = departurePoint;
-        this.arrivedPoint = arrivedPoint;
     }
 
     public long getId() {

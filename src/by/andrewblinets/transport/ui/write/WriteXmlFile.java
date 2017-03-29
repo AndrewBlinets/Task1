@@ -48,15 +48,6 @@ public class WriteXmlFile implements IteamMenu {
         createCarriage(userInterface.getCarriages(),rootElement);
         createTrain(userInterface.getPassengerTrains(),rootElement);
         doc.appendChild(rootElement);
-
-       /* Transformer t= null;
-        try {
-            t = TransformerFactory.newInstance().newTransformer();
-            t.setOutputProperty(OutputKeys.METHOD, "xml");
-            t.setOutputProperty(OutputKeys.INDENT, "yes");
-        } catch (TransformerConfigurationException e) {
-            System.out.println(e.getMessage());
-        }*/
         try(FileWriter writer = new FileWriter("src\\by\\andrewblinets\\transport\\file\\info.xml", false))
         {
             writer.write(toPrettyXmlString(6, doc));
@@ -64,15 +55,6 @@ public class WriteXmlFile implements IteamMenu {
         catch(IOException ex){
             System.out.println(ex.getMessage());
         }
-       /* try {
-            t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("src\\by\\andrewblinets\\transport\\file\\info.xml")));
-        }catch (NullPointerException e) {
-            System.out.println(e.getMessage());
-        } catch (TransformerException e) {
-            System.out.println(e.getMessage());
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        }*/
     }
 
     private void createTrain(List<PassengerTrain> passengerTrains, Element element) {

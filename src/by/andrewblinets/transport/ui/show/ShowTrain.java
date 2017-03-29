@@ -4,7 +4,7 @@ import by.andrewblinets.transport.ui.ExitFromMenu;
 import by.andrewblinets.transport.ui.IteamMenu;
 import by.andrewblinets.transport.ui.UserInterface;
 import by.andrewblinets.transport.ui.show.train.ShowAmountFromTo;
-import by.andrewblinets.transport.ui.show.train.ShowStyle;
+import by.andrewblinets.transport.ui.show.train.ShowCarriageByStyle;
 import by.andrewblinets.transport.ui.show.train.ShowWeightFromTo;
 import by.andrewblinets.transport.ui.show.train.SpisokTrains;
 import by.andrewblinets.transport.ui.util.IteamMenuManagement;
@@ -25,7 +25,7 @@ public class ShowTrain extends UserInterface implements IteamMenu {
         this.iteamsMenu.add(new SpisokTrains());
         this.iteamsMenu.add(new ShowAmountFromTo());
         this.iteamsMenu.add(new ShowWeightFromTo());
-        this.iteamsMenu.add(new ShowStyle());
+        this.iteamsMenu.add(new ShowCarriageByStyle());
         this.iteamsMenu.add(new ExitFromMenu());
     }
 

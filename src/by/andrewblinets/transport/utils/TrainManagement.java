@@ -7,29 +7,8 @@ import by.andrewblinets.transport.enumes.StyleCarriage;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Андрей on 20.03.2017.
- */
+
 public class TrainManagement {
-
-    /*public static int getAmountPassangerTrain(PassengerTrain train)
-    {
-        int kol = 0;
-        for (Carriage obj : train.getCarriages()) {
-            kol += obj.getPassengers().size();
-        }
-        return kol;
-    }
-
-    public static double getWeightLuggageTrain(PassengerTrain train)
-    {
-        int weight = 0;
-        for (Carriage obj : train.getCarriages())
-        {
-            weight+= CarriageManagement.getWeightLuggageCarriage(obj.getPassengers());
-        }
-        return weight;
-    }*/
 
     public static void sortCarriageByIncreaseAmountPassanger(PassengerTrain train)
     {

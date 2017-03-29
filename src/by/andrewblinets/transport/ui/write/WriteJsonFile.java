@@ -18,10 +18,9 @@ import java.util.List;
 
 public class WriteJsonFile implements IteamMenu {
 
-    private JSONObject json;
+
 
     public WriteJsonFile() {
-        json = new JSONObject();
     }
 
     @Override
@@ -41,7 +40,7 @@ public class WriteJsonFile implements IteamMenu {
             writer.write(new ObjectMapper().writerWithDefaultPrettyPrinter()
                     .writeValueAsString(jsonObject));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -72,10 +71,10 @@ public class WriteJsonFile implements IteamMenu {
         createElement(jsonObject, arrayCarriages, "carriage");
     }
 
-    private void createIteam(JSONObject jsonObject, String string, String name) {
+    private void createIteam(JSONObject jsonObject, String string, String name)
+    {
         jsonObject.put(name, string);
     }
-
     private void createPassenger(List<Passenger> passengers, JSONObject jsonObject)
     {
         JSONArray arrayPassengers = new JSONArray();

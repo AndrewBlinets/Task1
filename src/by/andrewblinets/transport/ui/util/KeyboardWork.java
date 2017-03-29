@@ -47,6 +47,7 @@ public class KeyboardWork {
         do {
             System.out.print(str);
             try {
+                flagError = false;
                 return Integer.parseInt(in.readLine());
             }
             catch (NumberFormatException e) {

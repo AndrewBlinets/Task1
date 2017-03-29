@@ -18,49 +18,57 @@ public class AddToTrainCarriage implements IteamMenu {
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
         if (userInterface.getPassengerTrains().size() != 0) {
-            new SpisokTrains().show(userInterface);
-            do {
-                int iteam = keyboard.readInt("Enter the number of the item to add carriage\n");
-                if(iteam < userInterface.getPassengerTrains().size() + 1)
-                {
-                    do {
-                        switch (keyboard.readInt("Add carriage\n1-new\n2-existing\n"))
-                        {
-                            case 1: {
-                                userInterface.getPassengerTrains()
-                                        .get(iteam - 1)
-                                        .addCarriage(userInterface
-                                                .getCarriages()
-                                                .get(new CreateCarriage().create(userInterface)));
-                                return true;
-                            }
-                            case 2:
-                            {
-                                userInterface.getPassengerTrains()
-                                        .get(iteam - 1)
-                                        .addCarriage(userInterface.getCarriages().get(selectionCarriage(userInterface)));
-                                return true;
-                            }
-                            default:
-                            {
-                                System.out.println("Enter a value from 1 to 2");
-                            }
-                        }
-                    }
-                    while (true);
-                }
-                else
-                {
-                    System.out.println("Number not found");
-                }
-            }
-            while (true);
+            return addCarriage(userInterface);
         }
         else
         {
             System.out.println("Train not found, create please!");
         }
         return true;
+    }
+
+    private boolean addCarriage(UserInterface userInterface) {
+        new SpisokTrains().show(userInterface);
+        do {
+            int iteam = keyboard.readInt("Enter the number of the item to add carriage\n");
+            if(iteam < userInterface.getPassengerTrains().size() + 1)
+            {
+                return switchAddCarriage(userInterface, iteam);
+            }
+            else
+            {
+                System.out.println("Number not found");
+            }
+        }
+        while (true);
+    }
+
+    private boolean switchAddCarriage(UserInterface userInterface, int iteam) {
+        do {
+            switch (keyboard.readInt("Add carriage\n1-new\n2-existing\n"))
+            {
+                case 1: {
+                    userInterface.getPassengerTrains()
+                            .get(iteam - 1)
+                            .addCarriage(userInterface
+                                    .getCarriages()
+                                    .get(new CreateCarriage().create(userInterface)));
+                    return true;
+                }
+                case 2:
+                {
+                    userInterface.getPassengerTrains()
+                            .get(iteam - 1)
+                            .addCarriage(userInterface.getCarriages().get(selectionCarriage(userInterface)));
+                    return true;
+                }
+                default:
+                {
+                    System.out.println("Enter a value from 1 to 2");
+                }
+            }
+        }
+        while (true);
     }
 
     private int selectionCarriage(UserInterface userInterface) {

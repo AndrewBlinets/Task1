@@ -1,8 +1,5 @@
 package by.andrewblinets.transport.exceptions;
 
-/**
- * Created by Андрей on 20.03.2017.
- */
 public class ExceptionTransport extends Exception {
 
     public ExceptionTransport() {

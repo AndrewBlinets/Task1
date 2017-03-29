@@ -7,6 +7,7 @@ import by.andrewblinets.transport.ui.UserInterface;
 public class ReadTextFile implements IteamMenu {
     @Override
     public boolean MenuIteam(UserInterface userInterface) {
-        return true;
+        throw new UnsupportedOperationException();
+        //return true;
     }
 }

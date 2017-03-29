@@ -3,9 +3,7 @@ package by.andrewblinets.transport.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Андрей on 20.03.2017.
- */
+
 public class Passenger {
 
     private long id;

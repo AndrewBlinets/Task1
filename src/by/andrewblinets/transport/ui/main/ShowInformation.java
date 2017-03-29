@@ -35,7 +35,6 @@ public class ShowInformation extends UserInterface implements IteamMenu {
             System.out.println(SHOW);
         }
         while (IteamMenuManagement.MainMenu(iteamsMenu,userInterface));
-//        iteamsMenu[new KeyboardWork().readInt(SHOW) - 1].MenuIteam(userInterface);
         return true;
     }
 }

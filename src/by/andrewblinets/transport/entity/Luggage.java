@@ -1,8 +1,5 @@
 package by.andrewblinets.transport.entity;
 
-/**
- * Created by Андрей on 20.03.2017.
- */
 public class Luggage {
 
     private long id;

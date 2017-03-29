@@ -26,8 +26,7 @@ public class ShowWeightFromTo implements IteamMenu {
                     System.out.println("In this train there are" +
                             TrainManagement
                                     .searchCarriageByWeightLuggagePassanger(start,finish,
-                                            userInterface.getPassengerTrains()
-                                                    .get(iteam - 1))
+                                            userInterface.getPassengerTrains().get(iteam - 1))
                             + "carriage of weight luggage passanger from " + start + " to " + finish);
                     return true;
                 }

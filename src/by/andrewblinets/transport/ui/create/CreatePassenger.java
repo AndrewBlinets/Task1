@@ -29,44 +29,20 @@ public class CreatePassenger implements IteamMenu {
             passenger = new Passenger(1);
         passenger.setName(keyboard.readString("Enter the name of the passenger"));
         passenger.setLastName(keyboard.readString("Enter the lastname of the passenger"));
+        createLuggagePassenger(userInterface, passenger);
+        System.out.println("Passenger " + passenger.toString() + " successfully created!");
+        userInterface.getPassengers().add(passenger);
+        return userInterface.getPassengers().size() - 1;
+    }
+
+    private void createLuggagePassenger(UserInterface userInterface, Passenger passenger) {
         boolean flagStop = true;
         do {
             switch (keyboard.readInt("Add luggage to the passenger?\n1-Add existing\n2-Create new\n3-Not, Thank you\n"))
             {
                 case 1:
                 {
-                    if(userInterface.getLuggages().size() == 0)
-                    {
-                        System.out.println("There is no Luggages");
-                        break;
-                    }
-                    else
-                    new ShowLuggage().show(userInterface);
-                    int number;
-                    do {
-                        number = keyboard.readInt("Enter the item number\n");
-                        if(number > userInterface.getLuggages().size())
-                            System.out.println("Sorry, There is no such number");
-                        else
-                            break;
-                    }
-                    while (true);
-                    if (searchLuggeshOtherPassangers(number,userInterface))
-                    {
-                        System.out.println("It's someone else's luggages");
-                        break;
-                    }
-                    else
-                    {
-                        /*for (Luggage luggage: passenger.getLuggages()) {
-                            if (luggage. == number)
-                            {
-                                System.out.println("This Luggages is already on this passenger");
-                                break;
-                            }
-                        }*/
-                        passenger.getLuggages().add(userInterface.getLuggages().get(number));
-                    }
+                    addExistingLuggage(userInterface, passenger);
                     break;
                 }
                 case 2:
@@ -84,9 +60,32 @@ public class CreatePassenger implements IteamMenu {
             }
         }
         while (flagStop);
-        System.out.println("Passenger " + passenger.toString() + " successfully created!");
-        userInterface.getPassengers().add(passenger);
-        return userInterface.getPassengers().size() - 1;
+    }
+
+    private void addExistingLuggage(UserInterface userInterface, Passenger passenger) {
+        if(userInterface.getLuggages().size() == 0)
+        {
+            System.out.println("There is no Luggages");
+        }
+        else
+        new ShowLuggage().show(userInterface);
+        int number;
+        do {
+            number = keyboard.readInt("Enter the item number\n");
+            if(number > userInterface.getLuggages().size())
+                System.out.println("Sorry, There is no such number");
+            else
+                break;
+        }
+        while (true);
+        if (searchLuggeshOtherPassangers(number,userInterface))
+        {
+            System.out.println("It's someone else's luggages");
+        }
+        else
+        {
+            passenger.getLuggages().add(userInterface.getLuggages().get(number));
+        }
     }
 
     private boolean searchLuggeshOtherPassangers(int number, UserInterface userInterface) {

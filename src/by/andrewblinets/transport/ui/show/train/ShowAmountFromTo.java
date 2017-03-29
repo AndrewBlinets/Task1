@@ -26,8 +26,7 @@ public class ShowAmountFromTo implements IteamMenu {
                     System.out.println("In this train there are" +
                             TrainManagement
                                     .searchCarriageByAmountPassangerByLimit(start,finish,
-                                            userInterface.getPassengerTrains()
-                                                    .get(iteam - 1))
+                                            userInterface.getPassengerTrains().get(iteam - 1))
                             + "carriage of amount passanger from " + start + " to " + finish);
                     return true;
                 }

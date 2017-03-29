@@ -5,27 +5,15 @@ import by.andrewblinets.transport.enumes.StyleCarriage;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Андрей on 20.03.2017.
- */
 public class Carriage {
 
     private long id;
     private List<Passenger> passengers;
     private StyleCarriage style;
 
-    public Carriage() {
-    }
-
     public Carriage(long id) {
         this.id = id;
         this.passengers = new ArrayList<>();
-    }
-
-    public Carriage(long id, int numbers, List<Passenger> passengers, StyleCarriage style) {
-        this.id = id;
-        this.passengers = passengers;
-        this.style = style;
     }
 
     public long getId() {
